@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NZ Organic Operator Training Platform — Register Your Interest</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("MewXK0feyw5w3Q8UE");</script>
+<style>
+  :root {
+    --cream: #F7F4EF;
+    --dark: #1C1F1A;
+    --mid: #4A4E46;
+    --muted: #8A8F84;
+    --green: #2D5A3D;
+    --green-light: #E8F0EB;
+    --green-mid: #4A7C5E;
+    --amber: #C4721A;
+    --amber-light: #FBF0E3;
+    --border: #D8D4CC;
+    --white: #FFFFFF;
+    --radius: 8px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--green);
+    color: white;
+    padding: 4rem 1.5rem 3.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+    pointer-events: none;
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 240px; height: 240px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+    pointer-events: none;
+  }
+  .hero .eyebrow {
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    opacity: .65;
+    margin-bottom: 14px;
+  }
+  .hero h1 {
+    font-family: 'Lora', serif;
+    font-size: clamp(26px, 5vw, 44px);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 18px;
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero p {
+    font-size: clamp(14px, 2vw, 16px);
+    opacity: .85;
+    max-width: 540px;
+    margin: 0 auto 28px;
+    line-height: 1.65;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 5px 14px;
+    font-size: 12px;
+    letter-spacing: .04em;
+    margin-bottom: 20px;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: white;
+    color: var(--green);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 14px 32px;
+    border-radius: var(--radius);
+    text-decoration: none;
+    transition: all .2s;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.2); }
+
+  /* CONTAINER */
+  .container { max-width: 720px; margin: 0 auto; padding: 0 1.2rem; }
+
+  /* SECTION */
+  section { padding: 3.5rem 0; }
+  section + section { border-top: 1px solid var(--border); }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--green-mid);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-family: 'Lora', serif;
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 500;
+    line-height: 1.3;
+    margin-bottom: 14px;
+    color: var(--dark);
+  }
+  .section-body {
+    font-size: 14.5px;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+  }
+
+  /* WHAT IT IS */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 1.8rem;
+  }
+  .feature {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.4rem;
+  }
+  .feature .icon {
+    font-size: 22px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  .feature h4 {
+    font-family: 'Lora', serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: var(--dark);
+  }
+  .feature p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+
+  /* KEY POINT — ONE LICENCE */
+  .highlight-box {
+    background: var(--green);
+    color: white;
+    border-radius: 12px;
+    padding: 2rem 2rem;
+    margin: 2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .highlight-box::after {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.06);
+    pointer-events: none;
+  }
+  .highlight-box h3 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+  .highlight-box p {
+    font-size: 14px;
+    opacity: .88;
+    line-height: 1.65;
+    margin-bottom: 10px;
+  }
+  .highlight-box p:last-child { margin-bottom: 0; }
+  .highlight-box strong { opacity: 1; font-weight: 500; }
+
+  /* PRICING */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 14px;
+    margin-top: 1.8rem;
+  }
+  .price-card {
+    background: var(--white);
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+    text-align: center;
+    position: relative;
+  }
+  .price-card.featured {
+    border-color: var(--green);
+    background: var(--green-light);
+  }
+  .price-card .tier {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 6px;
+  }
+  .price-card.featured .tier { color: var(--green-mid); }
+  .price-card .revenue {
+    font-size: 13px;
+    color: var(--mid);
+    margin-bottom: 14px;
+    line-height: 1.4;
+  }
+  .price-card .price {
+    font-family: 'Lora', serif;
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--green);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .price-card .per { font-size: 12px; color: var(--muted); }
+  .price-note {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 1rem;
+    line-height: 1.55;
+    text-align: center;
+  }
+  .price-note strong { color: var(--amber); font-weight: 500; }
+
+  /* MODULE LIST */
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 8px;
+    margin-top: 1.4rem;
+  }
+  .module-tag {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--mid);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .module-tag .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--green-mid);
+    flex-shrink: 0;
+  }
+  .module-tag.foundation {
+    background: var(--green-light);
+    border-color: #B8D4BF;
+    color: var(--green);
+    font-weight: 500;
+  }
+  .module-tag.foundation .dot { background: var(--green); }
+
+  /* EOI FORM */
+  .eoi-section {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.2rem;
+    margin-top: 2rem;
+  }
+  .eoi-section h3 {
+    font-family: 'Lora', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--dark);
+  }
+  .eoi-section .sub {
+    font-size: 13.5px;
+    color: var(--muted);
+    margin-bottom: 1.6rem;
+    line-height: 1.55;
+  }
+  .form-row { margin-bottom: 14px; }
+  label.field-label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--mid);
+    margin-bottom: 6px;
+  }
+  input[type=text], input[type=email] {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    color: var(--dark);
+    background: var(--white);
+    outline: none;
+    transition: border-color .15s;
+  }
+  input[type=text]:focus, input[type=email]:focus { border-color: var(--green); }
+  .submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--green);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 6px;
+    transition: all .15s;
+  }
+  .submit-btn:hover { background: var(--green-mid); }
+  .submit-btn:disabled { opacity: .5; cursor: not-allowed; }
+  .privacy-note {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.5;
+  }
+  .error-msg { color: #A03030; font-size: 13px; margin-top: 8px; display: none; }
+  .success-box {
+    background: var(--green-light);
+    border: 1px solid #B8D4BF;
+    border-radius: 10px;
+    padding: 1.5rem;
+    text-align: center;
+    display: none;
+  }
+  .success-box .tick { font-size: 28px; margin-bottom: 10px; }
+  .success-box h4 {
+    font-family: 'Lora', serif;
+    font-size: 17px;
+    color: var(--green);
+    margin-bottom: 6px;
+  }
+  .success-box p { font-size: 13.5px; color: var(--green-mid); line-height: 1.55; }
+
+  /* ABOUT */
+  .about-box {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.6rem 1.8rem;
+    margin-top: 1.4rem;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .about-avatar {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    background: var(--green-light);
+    border: 2px solid #B8D4BF;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Lora', serif;
+    font-size: 18px;
+    color: var(--green);
+    flex-shrink: 0;
+  }
+  .about-box p { font-size: 13.5px; color: var(--mid); line-height: 1.65; }
+  .about-box strong { color: var(--dark); font-weight: 500; }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    padding: 2rem 1.5rem;
+    border-top: 1px solid var(--border);
+    line-height: 1.7;
+  }
+  footer a { color: var(--green-mid); text-decoration: none; }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+  .hero h1, .hero p, .hero-cta {
+    animation: fadeUp .5s ease both;
+  }
+  .hero p { animation-delay: .1s; }
+  .hero-cta { animation-delay: .2s; }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">Coming Soon — Register Your Interest</div>
+  <p class="eyebrow">New Zealand · OPPA 2023 Compliance</p>
+  <h1>The NZ Organic Operator Training Platform</h1>
+  <p>Purpose-built e-learning for every organic operator in New Zealand. Understand your obligations under OPPA 2023 — and demonstrate your annual CPD requirement — with one licence for your whole team.</p>
+  <a href="#register" class="hero-cta">Register your interest →</a>
+</div>
+
+<div class="container">
+
+  <!-- WHAT IT IS -->
+  <section>
+    <div class="section-eyebrow">What this is</div>
+    <h2 class="section-title">Training built for the new organic approval regime</h2>
+    <p class="section-body">The Organic Products and Production Act 2023 (OPPA) has replaced New Zealand's voluntary organic certification system with a mandatory government-administered approval regime. Every operator — from kiwifruit growers to retail stores — now has statutory obligations they must understand and meet.</p>
+    <p class="section-body">This platform delivers self-paced e-learning that explains what organic approval means for your specific operation, what you must do, what records you must keep, and how to stay compliant year after year. Completion records serve as evidence of your annual CPD requirement under OPPA.</p>
+
+    <div class="features">
+      <div class="feature">
+        <span class="icon">🎓</span>
+        <h4>Self-paced learning</h4>
+        <p>Complete modules in your own time, on any device. No scheduled sessions, no travel.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🌿</span>
+        <h4>Sector-specific</h4>
+        <p>Content tailored to your operation — kiwifruit, wine, dairy, retail, and more.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">📋</span>
+        <h4>CPD evidence</h4>
+        <p>Completion certificates for every module, serving as annual CPD compliance records.</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🔄</span>
+        <h4>Always current</h4>
+        <p>Content updates as regulations and MPI notices evolve — included in your subscription.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONE LICENCE -->
+  <section>
+    <div class="section-eyebrow">How it works</div>
+    <h2 class="section-title">One licence. Your whole team.</h2>
+
+    <div class="highlight-box">
+      <h3>One annual licence covers every staff member at your operation</h3>
+      <p>You purchase one licence for your business. Every employee — from the owner to seasonal workers — trains under that single licence. You nominate one person as your administrator, who manages staff access and can pull completion records at any time.</p>
+      <p><strong>Staff must be employees of the licensed operation to access the platform.</strong> The licence is tied to your business, not to individual people.</p>
+    </div>
+
+    <p class="section-body">Your administrator can see who has completed which modules, download certificates, and manage access — without needing to contact us. Records are retained within the platform and renew annually with your licence.</p>
+
+    <p class="section-body"><strong>On-farm contractors</strong> have two options: they can train under one of the operator licences they work for, or hold their own contractor licence covering all their staff. Contractors who work across multiple operations may find their own licence the most practical option.</p>
+  </section>
+
+  <!-- MODULES -->
+  <section>
+    <div class="section-eyebrow">Content</div>
+    <h2 class="section-title">22 modules covering every operator type</h2>
+    <p class="section-body">Every operator starts with the Foundation module, then selects the sector-specific modules relevant to their operation. A kiwifruit grower who also exports completes Foundation, Kiwifruit, and Exports. A wine importer completes Foundation and Imports.</p>
+
+    <div class="module-grid">
+      <div class="module-tag foundation"><div class="dot"></div> Foundation (all operators)</div>
+      <div class="module-tag"><div class="dot"></div> Kiwifruit</div>
+      <div class="module-tag"><div class="dot"></div> Wine</div>
+      <div class="module-tag"><div class="dot"></div> Pip Fruit</div>
+      <div class="module-tag"><div class="dot"></div> Vegetables</div>
+      <div class="module-tag"><div class="dot"></div> Honey</div>
+      <div class="module-tag"><div class="dot"></div> Olives</div>
+      <div class="module-tag"><div class="dot"></div> Tree Nuts</div>
+      <div class="module-tag"><div class="dot"></div> Dairy</div>
+      <div class="module-tag"><div class="dot"></div> Beef & Lamb</div>
+      <div class="module-tag"><div class="dot"></div> Packhouses</div>
+      <div class="module-tag"><div class="dot"></div> Processed Foods</div>
+      <div class="module-tag"><div class="dot"></div> Health & Body Care</div>
+      <div class="module-tag"><div class="dot"></div> Inputs</div>
+      <div class="module-tag"><div class="dot"></div> Exports</div>
+      <div class="module-tag"><div class="dot"></div> Imports</div>
+      <div class="module-tag"><div class="dot"></div> Retail</div>
+      <div class="module-tag"><div class="dot"></div> On-Farm Contractors</div>
+      <div class="module-tag"><div class="dot"></div> Storage Facilities</div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="section-eyebrow">Pricing</div>
+    <h2 class="section-title">Annual licence — tiered by operator size</h2>
+    <p class="section-body">Pricing is tiered by your annual revenue, aligned to the OPPA cost recovery model. One price covers your entire operation regardless of how many staff members need training. Operators self-declare their tier.</p>
+
+    <div class="pricing-grid">
+      <div class="price-card">
+        <div class="tier">Tier 0</div>
+        <div class="revenue">Under $200k<br>annual revenue</div>
+        <div class="price">$100</div>
+        <div class="per">per year · whole team</div>
+      </div>
+      <div class="price-card">
+        <div class="tier">Tier 1</div>
+        <div class="revenue">$200k – $2M<br>annual revenue</div>
+        <div class="price">$390</div>
+        <div class="per">per year · whole team</div>
+      </div>
+      <div class="price-card featured">
+        <div class="tier">Tier 2</div>
+        <div class="revenue">$2M – $10M<br>annual revenue</div>
+        <div class="price">$750</div>
+        <div class="per">per year · whole team</div>
+      </div>
+      <div class="price-card">
+        <div class="tier">Tier 3</div>
+        <div class="revenue">Over $10M<br>annual revenue</div>
+        <div class="price">$1,500</div>
+        <div class="per">per year · whole team</div>
+      </div>
+    </div>
+    <p class="price-note"><strong>Launch promotion:</strong> Register your interest now and receive 30% off your first year when we go live.</p>
+  </section>
+
+  <!-- EOI FORM -->
+  <section id="register">
+    <div class="section-eyebrow">Register your interest</div>
+    <h2 class="section-title">Be first to know when we launch</h2>
+    <p class="section-body">We're currently building the platform and will notify registered operators as soon as it goes live. Early registrants receive the 30-day launch promotion automatically.</p>
+
+    <div class="eoi-section">
+      <h3>Register your interest</h3>
+      <p class="sub">No payment required. We'll contact you when the platform is ready to launch.</p>
+
+      <div id="eoi-form">
+        <div class="form-row">
+          <label class="field-label">Your name</label>
+          <input type="text" id="eoi-name" placeholder="e.g. Jane Smith">
+        </div>
+        <div class="form-row">
+          <label class="field-label">Work email address</label>
+          <input type="email" id="eoi-email" placeholder="jane@yourfarm.co.nz">
+        </div>
+        <div id="eoi-error" class="error-msg">Please enter your name and a valid email address.</div>
+        <button class="submit-btn" onclick="submitEOI()">Register my interest →</button>
+        <p class="privacy-note">Your details are only used to notify you about the platform launch. We do not share your information with anyone.</p>
+      </div>
+
+      <div class="success-box" id="eoi-success">
+        <div class="tick">✅</div>
+        <h4>You're registered</h4>
+        <p>We'll be in touch when the platform launches. Keep an eye on your inbox — registered operators receive the launch promotion automatically.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section>
+    <div class="section-eyebrow">About</div>
+    <h2 class="section-title">Built by someone who knows the system</h2>
+    <p class="section-body">This platform is developed by Donald Nordeng, former CEO of BioGro New Zealand, who led the organisation through the OPPA 2023 transition and has spent a decade at the centre of New Zealand's organic regulatory framework.</p>
+
+    <div class="about-box">
+      <div class="about-avatar">DN</div>
+      <p><strong>Donald Nordeng</strong> served as CEO and Chief Strategy Officer of BioGro New Zealand for approximately a decade, overseeing New Zealand's largest organic certification body through the OPPA transition. He holds an MBA in Sustainable Management and is a Member of the Institute of Directors. He now advises organic sector operators through <a href="https://donaldnordeng.com" style="color:var(--green-mid);">Donald Nordeng Consulting</a>.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  NZ Organic Operator Training Platform · <a href="https://donaldnordeng.com">donaldnordeng.com</a><br>
+  Built on OPPA 2023, Organic Products and Production Regulations 2025, and Organic Standards Regulations 2025.<br>
+  © 2026 Donald Nordeng Consulting
+</footer>
+
+<script>
+async function submitEOI() {
+  const name = document.getElementById('eoi-name').value.trim();
+  const email = document.getElementById('eoi-email').value.trim();
+  const error = document.getElementById('eoi-error');
+  const btn = document.querySelector('.submit-btn');
+
+  if (!name || !email || !email.includes('@')) {
+    error.style.display = 'block';
+    return;
+  }
+  error.style.display = 'none';
+  btn.disabled = true;
+  btn.textContent = 'Registering...';
+
+  try {
+    await emailjs.send('service_2zgszrb', 'template_t9vkn1e', {
+      to_email: 'donald.nordeng@gmail.com',
+      report_content: `NEW EOI REGISTRATION\n\nName: ${name}\nEmail: ${email}\nDate: ${new Date().toLocaleDateString('en-NZ', { day: 'numeric', month: 'long', year: 'numeric' })}\n\nRegistered interest in NZ Organic Operator Training Platform.`
+    });
+
+    document.getElementById('eoi-form').style.display = 'none';
+    document.getElementById('eoi-success').style.display = 'block';
+  } catch (err) {
+    btn.disabled = false;
+    btn.textContent = 'Register my interest →';
+    error.textContent = 'Something went wrong. Please try again.';
+    error.style.display = 'block';
+    console.error(err);
+  }
+}
+</script>
+</body>
+</html>
